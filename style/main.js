@@ -62,7 +62,7 @@ weeklyBtn.addEventListener('click', () => {
     })
 })
 monthlyBtn.addEventListener('click', () => {
-    weeklyBtn.classList.removefr('active');
+    weeklyBtn.classList.add('active');
     monthlyBtn.classList.add('active');
     dailyBtn.classList.remove('active');
     cards.forEach((card, index) => {
