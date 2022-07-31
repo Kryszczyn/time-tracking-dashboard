@@ -1,0 +1,228 @@
+@import './addons.scss';
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $fontFamily;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: $veryDarkBlue;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 1225px){
+        &{
+            flex-direction: column;
+        }
+    }
+    .profile__info-container{
+        width: 290px;
+        height: 500px;
+        background-color: $darkBlue;
+        border-radius: 20px;
+        display: grid;
+        grid-template-rows: 2.5fr 1fr;
+        @media screen and (max-width: 1225px){
+            &{
+                grid-template-rows: 2fr 1fr;
+                height: 200px;
+            }
+        }
+        .profile__info-bio{
+            padding: 2rem;
+            background-color: $blue;
+            border-radius: 20px;
+            @media screen and (max-width: 1225px){
+                &{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    padding: 1rem;
+                }
+            }
+            .bio__avatar{
+                width: 75px;
+                height: 75px;
+                background-image: url('./../images/image-jeremy.png');
+                background-size: cover;
+                border-radius: 50%;
+                border: solid #fff 2px;
+                margin-bottom: 2rem;
+                @media screen and (max-width: 1225px){
+                    &{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .bio__subtitle{
+                color: #fff;
+                font-size: .8rem;
+                font-weight: $fontWeightThin;
+                margin-bottom: .75rem;
+                @media screen and (max-width: 1225px){
+                    &{
+                        font-size: .8rem;
+                    }
+                }
+            }
+            .bio__name{
+                color: #fff;
+                font-size: 3rem;
+                font-weight: $fontWeightThin;
+                margin-bottom: 1rem;
+                @media screen and (max-width: 1225px){
+                    &{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        .profile__info-times{
+            padding: 2rem;
+            @media screen and (max-width: 1225px){
+                &{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+            }
+            .times__item:not(:last-of-type){
+                margin-bottom: 1rem;
+                @media screen and (max-width: 1225px){
+                    &{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .times__item{
+                color: $paleBlue;
+                cursor: pointer;
+                &:hover{
+                    color: #fff;
+                }
+            }
+            .active{
+                color: #fff;
+            }
+        }
+    }
+    .info__section-container{
+        margin-left: 2rem;
+        @media screen and (max-width: 1225px){
+            &{
+                margin-top: 2rem;
+                margin-left: 0;
+            }
+        }
+        .row:not(:last-of-type){
+            margin-bottom: 50px;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2rem;
+            grid-template-rows: 1fr;
+            @media screen and (max-width: 1225px){
+                &{
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                }
+            }
+            &:nth-of-type(1) .card:nth-of-type(1) .bgc__container{
+                background-color: $lightOrange;
+            }
+            &:nth-of-type(1) .card:nth-of-type(2) .bgc__container{
+                background-color: $softBlue;
+            }
+            &:nth-of-type(1) .card:nth-of-type(3) .bgc__container{
+                background-color: $lightRed;
+            }
+
+            &:nth-of-type(2) .card:nth-of-type(1) .bgc__container{
+                background-color: $limeGreen;
+            }
+            &:nth-of-type(2) .card:nth-of-type(2) .bgc__container{
+                background-color: $violet;
+            }
+            &:nth-of-type(2) .card:nth-of-type(3) .bgc__container{
+                background-color: $softOrange;
+            }
+            .card{
+                width: 300px; 
+                height: 225px;
+                position: relative;
+                
+                .bgc__container{
+                    position: absolute;
+                    width: 100%;
+                    height: 40%;
+                    top: 0;
+                    right: 0;
+                    border-radius: 1rem;
+                    & img{
+                        position: absolute;
+                        top:0;
+                        right: 10px;
+                    }
+                }
+                .info__container{
+                    position: absolute;
+                    top: 20%;
+                    left: 0;
+                    width: 100%;
+                    height: 80%;
+                    background-color: $darkBlue;
+                    border-radius: 1rem;
+                    padding: 1.5rem 2rem;
+                    .info__top{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .top__title{
+                            color: #fff;
+                            font-size: 1.5rem;
+                            margin-bottom: .5rem;
+                        }
+                        .top__more{}
+                    }
+                    .info__mid{
+                        width: 100%;
+                        .mid__info{
+                            color: #fff;
+                            font-size: 3.5rem;
+                            font-weight: $fontWeightThin;
+                            margin-bottom: .5rem;
+                        }
+                    }
+                    .info__bottom{
+                        width: 100%;
+                        .bottom__info{
+                            color: $paleBlue;
+                            font-size: 1rem;
+                            font-weight: $fontWeightThin;
+                            margin-bottom: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    a{
+        color: hsl(228, 45%, 44%);
+    }
+}
